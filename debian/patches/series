@@ -1,0 +1,7 @@
+0001-websockets-Enable-support-for-older-versions-of-cmi-.patch
+0002-HACK-websockets-Propagate-the-flags-provided-by-pkg-.patch
+0003-HACK-Symlink-src-plugins-domain-control-to-src-domai.patch
+0004-HACK-Add-mql-mqi-mdb-to-murphyd-s-linker-flags.patch
+0005-tests-check-libmqi-remove-causes-of-failed-builds-wi.patch
+0006-demo-plugins-Added-three-demonstration-plugins.patch
+0007-build-install-the-correct-demo-configuration.patch
