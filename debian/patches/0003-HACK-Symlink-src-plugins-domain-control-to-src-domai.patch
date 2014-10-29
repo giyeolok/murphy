@@ -1,0 +1,30 @@
+From: =?utf-8?q?Jan_Ekstr=C3=B6m?= <jan.ekstrom@intel.com>
+Date: Fri, 24 Oct 2014 12:52:31 +0300
+Subject: HACK: Symlink src/plugins/domain-control to src/domain-control
+
+This fixes a mismatch between how domain-control's header is located
+and to which kind of structure it is installed when Murphy is installed.
+---
+ configure.ac | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+
+diff --git a/configure.ac b/configure.ac
+index 8620e87..0327584 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -647,6 +647,15 @@ AC_SUBST(MRP_DOXYDEPS, [$MRP_DOCSCRIPT_DIR/doxydeps.py])
+ # Shave by default.
+ SHAVE_INIT([build-aux], [enable])
+ 
++# Create murphy symlink to match domain controller's
++# placing with how it is installed.
++if test ! -L murphy/domain-control; then
++    AC_MSG_NOTICE([Symlinking src/plugins/domain-control to src/domain-control...])
++    cd src
++    ln -s plugins/domain-control domain-control
++    cd ..
++fi
++
+ # Create murphy symlink to src.
+ if test ! -L murphy; then
+     AC_MSG_NOTICE([Symlinking src to murphy...])
